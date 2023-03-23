@@ -1,5 +1,5 @@
 <template>
-    <div class="color_bar">
+    <div class="colorBar">
     </div>
     <br>
     {{color}}
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style>
-.color_bar {
+.colorBar {
     width: 100px;
     height: 100px;
     background-color: v-bind(color);
