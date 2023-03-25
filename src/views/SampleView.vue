@@ -1,25 +1,29 @@
 <template>
     <div class="page__body">
-        <div v-for="color in colorList" :key="color">
-            <div class="column">
+        <div class="row">
+            <div v-for="color in colorList" :key="color">
                 <colorComponent :color="color"/>
-                <br>
-                <br>
-                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div v-for="color in colorList" :key="color">
                 <searchComponent :color="color"/>
             </div>
         </div>
+        <tableComponent :columns="columns"/>
     </div>
 </template>
 <script>
-import colorComponent from '@/components/color/ColorSample.vue'
-import searchComponent from '@/components/color/SearchSample.vue'
+import colorComponent from '@/components/sample/ColorSample'
+import searchComponent from '@/components/sample/SearchSample'
+import tableComponent from '@/components/sample/TableSample'
 
 export default {
   name: 'SampleView',
   components: {
     colorComponent,
-    searchComponent
+    searchComponent,
+    tableComponent
   },
   setup() {
     const colorList = [
@@ -31,8 +35,18 @@ export default {
         '#804040',
     ]
 
+    const columns = [
+        "Stock Number",
+        "Name",
+        "Price",
+        "Industry",
+        "Dividend",
+        "Target Price"
+    ]
+
     return {
-        colorList
+        colorList,
+        columns
     }
   }
 }
@@ -42,12 +56,17 @@ export default {
 .page__body {
     width: 100%;
     display: flex;
+    flex-direction: column;
+}
+
+.row {
+    width: 100%;
+    margin: 30px 0px;
+    display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     justify-content: space-around;
 }
-.column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 </style>
