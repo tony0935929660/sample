@@ -36,12 +36,30 @@ export default {
     ]
 
     const columns = [
-        "Stock Number",
-        "Name",
-        "Price",
-        "Industry",
-        "Dividend",
-        "Target Price"
+        {
+            "value": "Stock Number",
+            "key": "stock_number"
+        },
+        {
+            "value": "Name",
+            "key": "name"
+        },
+        {
+            "value": "Price",
+            "key": "price"
+        },
+        {
+            "value": "Industry",
+            "key": "industry"
+        },
+        {
+            "value": "Dividend",
+            "key": "dividend"
+        },
+        {
+            "value": "Target Price",
+            "key": "target_price"
+        }
     ]
 
     return {
